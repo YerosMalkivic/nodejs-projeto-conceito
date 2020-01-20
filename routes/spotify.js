@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const SpotifyWebApi = require('spotify-web-api-node');
 
-const clientId = '3936e3ee3ca848d4b94a631f74e32a06';
-const clientSecret = '9bc9659123564066a796da4ec61dfedd';
+const clientId = 'a118b0e5944e44f1894b08a3b817eb05';
+const clientSecret = 'b69d067c412d4634b10cf535ab545df3';
 
 const spotifyApi = new SpotifyWebApi({
     clientId: clientId,
