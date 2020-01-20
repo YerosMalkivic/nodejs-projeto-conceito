@@ -4,7 +4,7 @@
   "description": "Teste de REST API",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
