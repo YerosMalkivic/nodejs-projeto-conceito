@@ -1,9 +1,11 @@
 const express = require('express');
 const request = require('request');
-const rp = require("request-promise");
 const router = express.Router();
 
-const myaddress = 'http://localhost:3000';
+/* debug */
+//const myaddress = 'http://localhost:3000';
+/* prod */
+const myaddress = 'https://igwp.herokuapp.com';
 
 router.get('/', (req, res, next) => {
     res.status(200).send({
@@ -18,7 +20,8 @@ router.get('/:location', (req, res, next) => {
     function(error, response, body){
         if(error)
             res.status(400).send({
-                mensagem: 'Weather error. '+error
+                mensagem: 'Weather error. '+error,
+                error: error
             })
     });
 
@@ -37,7 +40,8 @@ router.get('/:location', (req, res, next) => {
         function(error, response, body) {
             if(error)
                 res.status(400).send({
-                    mensagem: 'Spotify error. '+error
+                    mensagem: 'Spotify error. '+error,
+                    error: error
                 })
         });
 

@@ -43,9 +43,7 @@ app.use((error, req, res, next) => {
     return res.send({
         erro: {
             mensagem: error.message,
-            error: error,
-            request: req,
-            response: res
+            error: error
         }
     });
 });
