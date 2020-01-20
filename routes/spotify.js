@@ -13,7 +13,8 @@ const spotifyApi = new SpotifyWebApi({
 function getTracks(tracks){
   var arrTracks = [];
     tracks.forEach(function(element, index, array){
-      arrTracks.push(element.track.name);
+      if(element.track)
+        arrTracks.push(element.track.name);
     });
     return arrTracks;
 }
@@ -53,7 +54,7 @@ router.get('/pop', (req, res, next) => {
 })
 
 router.get('/rock', (req, res, next) => {
-  spotifyApi.getPlaylist('37i9dQZF1DX4908CEYEdlz', {limit: 10})
+  spotifyApi.getPlaylist('37i9dQZF1DX4908CEYEdlz')
   .then(function(data) {
       res.status(200).send({
           mensagem: 'Playlist de ROCK',
