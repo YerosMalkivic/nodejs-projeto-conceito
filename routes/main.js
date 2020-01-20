@@ -18,9 +18,7 @@ router.get('/:location', (req, res, next) => {
     function(error, response, body){
         if(error)
             res.status(400).send({
-                mensagem: 'Weather error. '+error,
-                response: response,
-                body: body
+                mensagem: 'Weather error. '+error
             })
     });
 
